@@ -1,0 +1,12 @@
+mutation AddCommentExample($comment_text: String!, $post_id: ID!) {
+  addComment(text: $comment_text, postId: $post_id) {
+    comment {
+      id
+      text
+      commenter {
+        id
+        name
+      }
+    }
+  }
+}

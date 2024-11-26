@@ -1,0 +1,14 @@
+query GetUser($user_id: ID!) {
+  postsWithError(userId: $user_id) {
+    id
+    content
+    comments {
+      id
+      text
+      commenter {
+        id
+        name
+      }
+    }
+  }
+}

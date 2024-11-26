@@ -1,0 +1,1 @@
+http get localhost:5000/graphql query=@query_error.graphql variables:='{"user_id": "user123"}'

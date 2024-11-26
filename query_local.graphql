@@ -1,0 +1,19 @@
+query GetUser($user_id: ID!) {
+  user(userId: $user_id) {
+    name
+    email
+    posts {
+      id
+      title
+      content
+      comments {
+        id
+        text
+        commenter {
+          id
+          name
+        }
+      }
+    }
+  }
+}

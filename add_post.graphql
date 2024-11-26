@@ -1,0 +1,8 @@
+mutation AddPostExample($post_content: String!) {
+  addPost(content: $post_content) {
+    post {
+      id
+      content
+    }
+  }
+}

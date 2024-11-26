@@ -1,0 +1,20 @@
+query GetUser($user_id: ID!) {
+  exampleError
+  joinedUser(userId: $user_id) {
+    name
+    email
+    posts {
+      id
+      title
+      content
+      comments {
+        id
+        text
+        commenter {
+          id
+          name
+        }
+      }
+    }
+  }
+}
