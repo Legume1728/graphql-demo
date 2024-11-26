@@ -11,6 +11,10 @@ example.db:
 	$(ACTIVATE) && python create_db.py
 
 run: example.db
+	@echo You can now run any of the add or query scripts.
+	@echo
+	ls -1 *.sh
+	@echo
 	$(ACTIVATE) && python graphql_posts_example.py
 
 clean:
