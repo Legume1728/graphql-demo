@@ -1,6 +1,3 @@
-
-ACTIVATE := source .venv/bin/activate
-
 install:
 	which uv || (curl -LsSf https://astral.sh/uv/install.sh | sh)
 	uv venv --python 3.13
@@ -8,7 +5,7 @@ install:
 	rm -f example.db
 
 example.db:
-	$(ACTIVATE) && python create_db.py
+	.venv/bin/python create_db.py
 	@echo
 	echo .schema | sqlite3 $@
 
@@ -17,7 +14,7 @@ run: example.db
 	@echo
 	ls -1 *.sh
 	@echo
-	$(ACTIVATE) && python graphql_posts_example.py
+	.venv/bin/python graphql_posts_example.py
 
 clean:
 	rm -rf .venv/ example.db
