@@ -9,6 +9,8 @@ install:
 
 example.db:
 	$(ACTIVATE) && python create_db.py
+	@echo
+	echo .schema | sqlite3 $@
 
 run: example.db
 	@echo You can now run any of the add or query scripts.
